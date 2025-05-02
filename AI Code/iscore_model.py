@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, R
 from sklearn.metrics import mean_squared_error, r2_score, accuracy_score, classification_report, confusion_matrix, roc_auc_score, roc_curve, precision_recall_curve
 from sklearn.model_selection import GridSearchCV
 from matplotlib.colors import ListedColormap
+from sklearn.metrics import precision_score, recall_score, f1_score
 
 #load data
 df = pd.read_csv("D:\AI Projects\data\credit_score.csv")
@@ -293,14 +294,6 @@ def plot_classification_results(classification_performances, X_test, y_default_t
         plt.savefig('classification_feature_importance.png', dpi=300)
         plt.show()
 
-# Add this to imports
-from sklearn.metrics import precision_score, recall_score, f1_score
-
-# Add this after the other visualizations
-print("\nAnalyzing probability threshold impact...")
-best_class_needs_scaling = best_class_model_name not in ['Random Forest Classifier', 'Gradient Boosting Classifier']
-plot_default_threshold_optimization(best_class_model, X_test, y_default_test, best_class_needs_scaling, scaler)
-
 # Also add a combined visualization for the default probability threshold
 def plot_default_threshold_optimization(classification_model, X_test, y_default_test, needs_scaling=False, scaler=None):
     """Plot the effect of different probability thresholds on precision, recall and F1."""
@@ -333,6 +326,11 @@ def plot_default_threshold_optimization(classification_model, X_test, y_default_
     plt.grid(True, alpha=0.3)
     plt.savefig('threshold_optimization.png', dpi=300)
     plt.show()
+
+# Add this after the other visualizations
+print("\nAnalyzing probability threshold impact...")
+best_class_needs_scaling = best_class_model_name not in ['Random Forest Classifier', 'Gradient Boosting Classifier']
+plot_default_threshold_optimization(best_class_model, X_test, y_default_test, best_class_needs_scaling, scaler)
 
 # Save the best models and scaler for later use with our web application
 print("\nSaving the best models and necessary components...")
