@@ -6,8 +6,11 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
+# Get the absolute path to the project root directory
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
 # Load the saved models and components
-MODEL_DIR = os.path.join('..', 'models', 'credit_score')
+MODEL_DIR = os.path.join(PROJECT_ROOT, 'models', 'credit_score')
 
 # Load the model metadata
 metadata = joblib.load(os.path.join(MODEL_DIR, 'model_metadata.pkl'))
