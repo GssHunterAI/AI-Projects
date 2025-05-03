@@ -135,7 +135,6 @@ def predict_credit_and_default_risk(features, regression_model, classification_m
     
     return credit_score, default_risk, default_prob
 
-# Example usage:
 # Find best models from results
 best_reg_model_name = reg_df.index[0]
 best_class_model_name = class_df.index[0]
@@ -146,8 +145,6 @@ best_class_model = trained_class_models[best_class_model_name]
 # Check if models need scaling
 reg_needs_scaling = best_reg_model_name not in ['Random Forest', 'Gradient Boosting']
 class_needs_scaling = best_class_model_name not in ['Random Forest Classifier', 'Gradient Boosting Classifier']
-
-# Add after your existing functions and before the result display:
 
 # --------- VISUALIZATION FUNCTIONS ---------
 
