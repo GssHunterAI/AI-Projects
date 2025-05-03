@@ -39,19 +39,7 @@ key_features = [
 ]
 
 def predict_credit_and_default(input_data):
-    """
-    Make predictions for credit score and default risk
-    
-    Args:
-        input_data: Dictionary containing feature values
-        
-    Returns:
-        credit_score: Predicted credit score (integer)
-        default_risk: Whether customer is likely to default (0 or 1)
-        default_prob: Probability of default (0.0 to 1.0)
-    """
-    # Create a DataFrame with all features
-    # Start with zeros for all features
+
     df = pd.DataFrame(0, index=[0], columns=feature_names)
     
     # Update the DataFrame with the provided features
