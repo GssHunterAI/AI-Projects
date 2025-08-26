@@ -71,6 +71,13 @@ Each project is self-contained with its own dataset, code, models, and documenta
 - **Features:** Mathematical foundations, comparison implementations
 - **Dataset:** Housing price data
 
+### 10. Movie Recommender System
+**Folder:** `10_Movie_Recommender`
+- **Type:** Deep Learning Recommendation System
+- **Algorithms:** Neural Network Embeddings, Collaborative Filtering
+- **Features:** Two-stage embedding learning, visualization, modular design
+- **Dataset:** MovieLens 1M dataset (1M ratings, 6K users, 4K movies)
+
 ## Repository Structure
 
 Each project folder contains:
@@ -94,8 +101,8 @@ Project_Name/
 
 ### Deep Learning
 - **Framework:** TensorFlow/Keras
-- **Applications:** Computer Vision, Image Classification
-- **Architecture:** Convolutional Neural Networks
+- **Applications:** Computer Vision, Image Classification, Recommendation Systems
+- **Architecture:** Convolutional Neural Networks, Embedding Networks
 
 ### Web Development
 - **Framework:** Flask
@@ -164,6 +171,7 @@ pip install pandas numpy scikit-learn matplotlib seaborn flask tensorflow
 - Credit Score Prediction (Full Stack)
 - Diabetes Prediction (Full Stack)
 - Computer Vision Classifier
+- Movie Recommender System
 
 ## Contributing
 
